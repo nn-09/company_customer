@@ -13,6 +13,7 @@ Route::group( ["middleware"=>["auth:user-api"]],function(){
     Route::post("user/profile",[ApiController::class,"user_create_profile"]);
 Route::get("user/logout",[ApiController::class,"user_logout"]);
 Route::post("user/refreshToken",[ApiController::class,"user_refreshToken"]);
+Route::post("user/image",[ApiController::class,"user_image"]);
 
 
 });

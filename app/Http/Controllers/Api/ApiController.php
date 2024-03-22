@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Admin_Image;
 use App\Models\Admin_Profile;
+use App\Models\Image;
 use App\Models\Profile;
 use App\Models\User;
+use App\Models\User_Image;
 use App\Models\User_Profile;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -186,10 +189,18 @@ catch (QueryException $e)
 
 }
 
+public function user_image(Request $request)
+{
+$request->validate(['path'=>'required','user_id'=>'required']);
+try{
+$image=User_Image::create(['path'=>$request->path,'user_id'=>$request->user_id]);
+return response()->json(['status'=>true,'image'=>$image]);
+}
 
+catch (QueryException $e)
+    { return response()->json(['status'=>false,'message'=>'Try again']);}
 
-
-
+}
 
 
 
@@ -307,6 +318,71 @@ catch (QueryException $e)
 { return response()->json(['status'=>false,'message'=>'Try again']);}
 
 }
+
+
+public function admin_image(Request $request)
+{
+$request->validate(['path'=>'required','admin_id'=>'required']);
+try{
+$image=Admin_Image::create(['path'=>$request->path,'admin_id'=>$request->admin_id]);
+return response()->json(['status'=>true,'image'=>$image]);
+}
+
+catch (QueryException $e)
+    { return response()->json(['status'=>false,'message'=>'Try again']);}
+
+}
+
+
+// public function image_profile(Request $request){
+//     $request->validate(['path']);
+//     if($request->belongesto=="user"){
+//         $request->validate(['user_id']);
+
+//         try{
+//             $image=Image::create(['path'=>$request->path,'user_id'=>$request->user_id,'admin_id'=>null]);
+
+//             return response()->json(['status'=>true,'image:'=>$image]);
+//         }
+
+// catch (QueryException $e)
+// { return response()->json(['status'=>false,'message'=>'Try again']);}
+// }
+
+
+//         else
+//         if($request->belongesto=="admin"){
+//           $request->validate(['admin_id']);
+// try{
+// $image=Image::create(['path'=>$request->path,'admin_id'=>$request->admin_id,'user_id'=>null]);
+// return response()->json(['status'=>true,'image:'=>$image]);
+// }
+
+// catch (QueryException $e)
+//     { return response()->json(['status'=>false,'message'=>'Try again']);}
+// }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -39,4 +39,8 @@ class Admin extends Authenticatable
     public function admin_profile(){
         return $this->hasOne(Admin_Profile::class);
     }
+
+    public function admin_image(){
+        return $this->hasOne(Admin_Image::class);
+    }
 }
