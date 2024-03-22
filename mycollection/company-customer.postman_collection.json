@@ -1,0 +1,556 @@
+{
+	"info": {
+		"_postman_id": "0ebba783-e3e9-4427-9b44-fee4a86300c3",
+		"name": "company-customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30870491",
+		"_collection_link": "https://red-eclipse-965228.postman.co/workspace/New-Team-Workspace~ede8af87-ec15-4db3-bd4d-7941758a69b9/collection/30870491-0ebba783-e3e9-4427-9b44-fee4a86300c3?action=share&source=collection_link&creator=30870491"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text"
+								},
+								{
+									"key": "communication",
+									"value": "email",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "communication",
+									"value": "email",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGQ0MmZkYTliYjM4ODhlZTg2ZjQ4ODZlOGMxN2ZlODVhZmFmZjUyOGRkOTU2MTg4MDBhYTJmYmVkYWYyMTY0ZWFlMGY1YTA2MjkxNWI5ZjMiLCJpYXQiOjE3MTEwODEwNDIuMzg5NjgxLCJuYmYiOjE3MTEwODEwNDIuMzg5Njg0LCJleHAiOjE3NDI2MTcwNDIuMzc0MTcxLCJzdWIiOiIyIiwic2NvcGVzIjpbInVzZXIiXX0.vIbmCdeo5eZe5Nlw7GKqtQIiM5Ftu_Y7-jigeNl-jsPmqSoBvnF4YxzMmbHL_XTQG20PKyifYmgE2o8B2ZKfM8VoSssEgyMzS3ZXIaptZg7Qt_vzjgNIt3SolRSUMF5JeFS77-Xz2O_13wYzQFzztc4bVTO_W9sC0Mz_vFr40bAdTOkE516uArxvnqnUAbe3pXtzhVSnJivhJQGZF2BNHccE2HU3mstagOJ7Xhmz4wuhDqgtkrSDl3cEwpDG01YCVHV9dEEPaQVceHJpOH2FbzWxCrjeRf3bFWHzFlcaf-p4pUUa5D_UXdNeEiHvhQmS6GURCHF5zVwJrQ3fgRR-W3_So22BRBp6K4n3KqeM2D6KsBYMqNcg4TdqT57OrGJ---8tXA0f4HMHAZ-EbD0RlAdfMdnAcdcdZVifDJJg51hILlKQQZ2Y8t1maP14rLsodxfnhcyXYy6eXmqN0Bc2nv-tlUK28q9zycdoJIzqnbtUwUuwBAc6TN4AjkjmocZwLqe4BgOnwnI_2JZmywcSe_My26ptaSG1Fh33M16pW2kdTN2yalwBFUQ_6qc86KDS1wRYfpGiMTyrtzWOroAvoUDVfgdS1mIjFO7XqN4E8PGpGx6caL-Q806sM_nDhNT8hXNzyBKAUl3IxKg8eNIYZosNrEHPryB2Etgnti8gjlQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2M0ZTcyMmZiZDU1NjFhZDczNjQxNmY1MjM3YjA4YzkwZTAxZmEyOTkwZDI2MDVhNzE4ZGY5YzI5MzU1YmExODk1ZDEyMDhhNTllMjA1MDUiLCJpYXQiOjE3MTEwODI0MzQuMjU0MDUxLCJuYmYiOjE3MTEwODI0MzQuMjU0MDU1LCJleHAiOjE3NDI2MTg0MzQuMjM0MzU3LCJzdWIiOiIyIiwic2NvcGVzIjpbInVzZXIiXX0.a5y8YhvTto8HOVjL2aSxP4JU7aGrsD3abm6xE8B0b2BNbxj0KpDfcRYUaDp1eZLzqqykrPrMumDrSn6nUeWiOLjkOAfwMsCsI7EQAkHyA9TNH83ehpJD0FKZ0IpXOJnnRX5VbhgYAYAgEfMmNwT1nUVCFciUdfAvIN_xdV8drZHy474mGWtjfAoAXc6CnFVxSgWKocqbhdcx99zVQ6wJ8TI3S9YbPDF-kNluQPnSDZhAEYKjc6NUUDqcclFNXPyQ2aK8Rf1DkXP-rpSPBgtolrrRkI4WKOq-0RzKTf9lcyUQ7v7qhDkgSIKygvyHK8rUjXrVAVUkri0xBdNJKb3wGzM61zUUgt8OlSw9CmjjevAijCjOrpqwepB43WgGcRqBoRv7gCBv9_ISZOLPbXjMs7HNsexAgPBlCeGCC7ixsGyDNrZjMDnO98nZuLCN-jMIFA_lPL1auUTQMERp-Mc-FHPdtrn-a9G1iD-csX-yVzMiRCHb0ehuis9G0f5xG7zorpeRGx9VyU7lOoV0CN8zpenfcqqOxtZOf3dINGzlkcqSVSMAu6Ur5s7QLrpGEnIMN34SoLDw6SA8xZuU2Zee0BNOsTFXqMKWerhRWWQJILnsNY15S_unCZ0YMNXzo8hyVXZh9bbUyWEebSOHDCqwMmOsFL7DL8_76kbJxMxmJCE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/refreshToken",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDkzZWJjNTA1NTc5MTY5Mjc5MjQ3ZGQyOGQ1MzlkNDUxMWFlZTVhZWUwNjA5OTMyMzRiZTk1YTM2Mzk3YWMwYTAxMzgzOTMyYTI3MTUzMWQiLCJpYXQiOjE3MTExMDM1NTYuMzU2OTQzLCJuYmYiOjE3MTExMDM1NTYuMzU2OTQ3LCJleHAiOjE3NDI2Mzk1NTYuMzI1OTkyLCJzdWIiOiIyIiwic2NvcGVzIjpbInVzZXIiXX0.lenw5mKPzB7m9CfNsg7doZ-Y3Fgwmo11FAMJ7_AqY_A1e5nwbgrLUlgaqssUfy4zT1c-W-wxFjv7QFJIo6uagJ4WqPhlx9Qz9F348DUJ3heYNP5JI86y8XzjD_2jk7CwNPMHJ8Y4idL4Q38az6UAItQMaHxA1jR-bz02rgOgnJmNV4ufReNt6u94RQlgsTDdkzLt64lgWeeGxpM28UQe8-8UBa2eIra8V_alzvY1eQY8W1h8aKewEFdgqZVZsZ1rOEvgmKOMGgfKUXeCgOCCDEv3vN-OSjWXOr20UkGPyV_-uNHycDNPVRSR4i-C_dUiJ03e6SfceCaNmTT52o1Fvg_aZ-vj1iNvG3kqSGi2H4K2sZXM2PeLixwgg6yrpvStGCug25hl18iEwKTCP7MQWw_LALj5MzyfdQ9uiRQzWBjJE4Aku6CltSDOMtGFHiBTOPoBbgWaYwuUFClJEtWvbs7DNuT96MjYMvRncQ5CvEsPFO4kbHbFbZfl5RLF1BVIhOgbEd7VQ-GFdDLOx8KxrU0EGky26TgRCjSbP-kv6Wwym-mMhfFa4yGpVM7h5GDikBvOeCwbsee6NW6IQVy0QI2slGJpmqU2lfXBIuDkcWE2_gsjNmeqZWkm5dQsVSo0LwXi5G63ooLhd9nTpioNdjPn3Uz0ADgPPvEyW-5hAF8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "mariam",
+									"type": "text"
+								},
+								{
+									"key": "middle_name",
+									"value": "dd",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "fff",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Female",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmVhYmI5MjEzZjMzNmRmYzUyYzQ5ZWY4YjhlOGUxMzQ3ZjQ0NmFmMDg3OTEzZTcwZjI2NDJmMzJmYzVhYTY0NTY5ZTlkNjllYTdkNjE1ODUiLCJpYXQiOjE3MTExMjQ3OTguMzExMjI4LCJuYmYiOjE3MTExMjQ3OTguMzExMjMxLCJleHAiOjE3NDI2NjA3OTguMjk4MDc1LCJzdWIiOiIxIiwic2NvcGVzIjpbInVzZXIiXX0.oNr_3qQn4j9tUGrH9lYudk3d9ilwrWgwjo4q8BvycojiiUJnoV40o-NSGH7EJl6Y0xxVeQFCYeLPJ4Dmidu8pN7L--U2PUEglZobruIwiN1MLvKRQG09uNC8g2zWQpkHLjCAPGlTB0T53nx7x6wwmYbYAl6SkOPYbZa6-En3FFAPSWv-RVusiXi3CD6sASxeH7Y4_qkEVJX-bblfWrsfP_1TY5XblDVyPfOEeadn7qvXOk9Hb7G10z65tX-15teOAgI6B2FSnE721j9CZYoNcz7OFlEIoT1k-wwSWU1fx8oFFJmrlNvcWyS3IH8SUbLOrzzNtX6z-jP9B94siFQZVckzNqvJstmSU9NCnNH7qcflA6fA1rOIc3N8DCYy9o4x90FI6qbK-mwTR_VZqgRQrkTAyCxXSZDBo93ZiXKHsjReVznh5m52NAl-I6KToyepNdx-nuX8P-f0RC3_boe33VXZk7ASXdivsd6RMqMNenUkvCVEAOctqJUMb8rupbBO27YqwuLr8Z0xLjk5ZhfgdFasAk1V0uDgigYDaFQd7HpIF2HvSusFst3X5GM385QJYnGlr1DO66AunmXuW9qJ5tseCGEkPVBu7Dl9J6MCeeyGBuWHzbJa-KnNzqE6lDl326D-0g4D-KpscAWX3d1KVKahFYo6wkyu4J8h2-xAF4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "path",
+									"value": "aaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "company_name",
+									"value": "naya",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nn@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "nn@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjIwNThmNDE5ZTgzNjNiOTcwZjVhMzFmNGI3ZmU5MjIyOTAwODc1MjEwNTNiZjExNTVkMjg0MGFkZGY4MDhhNzVlYWZjMzkzYjQxNjgwZTQiLCJpYXQiOjE3MTEwODEwOTYuOTU0OTkxLCJuYmYiOjE3MTEwODEwOTYuOTU0OTk2LCJleHAiOjE3NDI2MTcwOTYuOTA0MTI4LCJzdWIiOiIxIiwic2NvcGVzIjpbImFkbWluIl19.ZJu8sIm6mAAoFYMsIhgolYFigxNThyGUsnmeA69TEIUQVfwlZrr_-uGzxMZ3UTB9lIF-V0zcuJZ-BVU52m7hAI18g0WysLd9kSiNEc7gKfmQp9ZWkJdqW99sR34brKOZ7ge2_WDJnQdcnhK7PmFRUa_vNmYikP6s8Ld06-JgXqq_Hni7tM3KbMHLoJYSugDKxtOZwiaM4hDgq-xn8tctyzHt0Y6UKPXHAPno1SleEH2XYJKlkzKpJjE62yueqKponGCWDxDkDq7uIHfUUXEX_Omcd1c4Adv2qU_wdkT_KzW1U5IoNgXS-Pzm2qGX3FCVbM4dli0ph_FKUl4PKZVoAYnFM_ED5ppfmMayCOGLbwjvGhomxitZ8bQgAOVdCRokjUdvuEKUniB5pWzhEXbvnBi2-MCW5l1zomco9FuVK31N3IRcJ2y1Cy8SLib9ioAPZ1rI4Q2wj-NoqYoxJz1kPXp9fY7wm3MD8swQiH8yo69CwGkRPiu6ZQL32KG4mkfjLSeNWmjBWNdaRI6C10k_OvO264Pb6zuHiWZ_pxKMBix1nFIvGL-sToYbpbqbLlEd3m94Q6zrzzK6p4LNpOhx-CzKvfPYnn7qrZshtASJqldqwvDT9pmSpp8QlcUewAQulSBf93oOZm2r3-bjpZKp7f_jBaltu4NkGhDjFAoQ1ig",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDE4MzAwMWVlN2VjMWU0NDhkNmM3MGQ1ODQ1MjU2M2QwNTliZWRlZjA4ZmIzOWFmODc0MDhkODU5YmZlOWFiNDE3NjQxMDJlYTg2MzRlM2QiLCJpYXQiOjE3MTExMjUyOTguOTg0ODQsIm5iZiI6MTcxMTEyNTI5OC45ODQ4NDQsImV4cCI6MTc0MjY2MTI5OC45NjIwMzcsInN1YiI6IjEiLCJzY29wZXMiOlsiYWRtaW4iXX0.RWdGDvfQV7eh2bIQgi6XQIxmps_8va5-Yp_0x9yaTsvAKMp1PIj8C4Ed9LFFU82UCe7tLaXV9hIeZDSa1kzWSUhHwo1H-8CM-HFhVeLXdYupJK2KdwX2ZnabR5DYNKv8k3qANijHkyAcjvhJEYi4jSpKeC5kS9PSuNKRfqTA3KgducwXbhgIHTaeLDo2tlxuTfHqhX0yrLozdt4NmMxv9HigolXf5LH0oR0Mnc2vYi5nVyz8aIuOKlPHMmL9caq0KZAxtf4QrVXxrGeMpiPStfdTPdoS9qLhlbO2OnoSoGYNeYu8Nt8_RbzRI7VFeHj8fkZ1JNw56WvKZkzO22nIMBFi5a6pAMhMi-kngAkAXkw4jCRfDRq6S2akWd9Ir7JYkgDU9AeREHbI0LnV2yDX5AJp-Jqnr-Y42-DMSzDHiosg7x5Mn4Lq5G2_3bkitxUJlXK6_ayUh_iuQp3a9bBT7OoDoNG8xIBqrpBS24XYvJnxlqU33FKtlV9oGQWY8kRwAJS8KifsDEIVquorhmHpvPKNkHjKt_Cq0mgfbAjCPdhmUou0DNVU_ZYOMkfEXAOSRCWuKujD4vrMHUCESp_5crQoZcZw3JoXtV-zVAIGJF1eAWgujQrpHzKatZImIJ96GPh03QxEqNuif5uexKIGm8n1Cfv0j3XZuFv2RqTBK0Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "path",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1eee86ad-1fcd-4810-a7bc-2323291acb22",
+										"postman-cloud:///1eee86aa-90db-47d0-b213-b669212c5d39"
+									]
+								},
+								{
+									"key": "admin_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
