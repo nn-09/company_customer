@@ -13,4 +13,23 @@ class User_Profile extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function experiances(){
+        return $this->hasMany(Experiance::class);
+    }
+
+    public function skills(){
+        return $this->hasMany(Skills::class);
+
+    }
+
+
+    public function educatios(){
+        return $this->hasMany(Education::class);
+
+    }
+    public function interestins(){
+        return $this->hasMany(Interesting::class);
+
+    }
+
 }

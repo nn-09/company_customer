@@ -6,8 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Admin_Image;
 use App\Models\Admin_Profile;
+use App\Models\Bio;
+use App\Models\Education;
+use App\Models\Experiance;
 use App\Models\Image;
+use App\Models\Interesting;
 use App\Models\Profile;
+use App\Models\Skills;
 use App\Models\User;
 use App\Models\User_Image;
 use App\Models\User_Profile;
@@ -202,12 +207,79 @@ catch (QueryException $e)
 
 }
 
+public function education(Request $request)
+{
+
+$request->validate(['name'=>'required','type'=>'required','grade'=>'required','first_date'=>'required','last_date'=>'required']);
+try{
+
+    $education=Education::create(['name'=>$request->name,'type'=>$request->type,'grade'=>$request->grade,'first_date'=>$request->first_date,'last_date'=>$request->last_date]);
+   return response()->json(['status'=>true,'message'=>$education]);
+}
+
+catch (QueryException $e)
+    { return response()->json(['status'=>false,'message'=>'Try again']);}
+
+}
+
+
+
+
+public function experiance(Request $request)
+{
+
+
+    $request->validate(['name'=>'required','description'=>'required','first_date'=>'required','last_date'=>'required','company_name'=>'required']);
+
+    try{
+
+        $experiance=Experiance::create(['name'=>$request->name,'description'=>$request->description,'company_name'=>$request->company_name,'first_date'=>$request->first_date,'last_date'=>$request->last_date]);
+        return response()->json(['status'=>true,'message'=>$experiance]);
+     }
+
+
+    catch (QueryException $e)
+        { return response()->json(['status'=>false,'message'=>'Try again']);}
+
+    }
+
+
+
+
+public function skills(Request $request)
+{
+
+
+    $request->validate(['name'=>'required']);
+    try{
+        $skills=Skills::create(['name'=>$request->name]);
+        return response()->json(['status'=>true,'message'=>$skills]);
+
+
+    }
+
+    catch (QueryException $e)
+        { return response()->json(['status'=>false,'message'=>'Try again']);}
+
+    }
 
 
 
 
 
 
+public function interestings(Request $request)
+{
+    $request->validate(['name'=>'required']);
+
+    try{
+        $interestings=Interesting::create(['name'=>$request->name]);
+        return response()->json(['status'=>true,'message'=>$interestings]);
+    }
+    catch (QueryException $e)
+        { return response()->json(['status'=>false,'message'=>'Try again']);}
+
+}
 
 
 
@@ -363,9 +435,28 @@ catch (QueryException $e)
 // }
 // }
 
+public function bio(Request $request){
 
+    $request->validate(['body'=>'required']);
+    try{
+$bio=Bio::create(['body'=>$request->body]);
+return response()->json(['status'=>true,'body'=>$bio]);
+    }
+    catch (QueryException $e)
+       { return response()->json(['status'=>false,'message'=>'Try again']);}
 
+}
 
+public function bio_show(){
+    try{
+
+$bio=Bio::where('id',Auth::user()->id)->first();
+            return response()->json(['status'=>true,'bio'=>$bio]);
+        }
+        catch (QueryException $e)
+        { return response()->json(['status'=>false,'message'=>'Try again']);}
+
+}
 
 
 
